@@ -1,0 +1,39 @@
+# Python program to print Even Numbers in a List and store output in file
+
+i =input('Enter elements of a list separated by space ')
+print("\n")
+list1 = i.split()
+
+try:
+  for i in range(len(list1)):
+
+    # convert each item to int type
+    list1[i] = int(list1[i])
+
+  # we can also print even no's using lambda exp.
+  even_nos = list(filter(lambda x: (x % 2 == 0), list1))
+
+  with open('even.txt', 'a+') as f:
+      f.write("Even nos are: ")
+      f.write(str(even_nos))
+      f.write("\n")
+
+
+except TypeError as e:
+  print("This is a type error", e)
+
+except ValueError as e:
+  print("this is value error", e)
+
+except Exception as e:
+  print("All errors handle here", e)
+  
+  
+  
+  output:(which is stored in even.txt file)
+  
+  
+  Enter elements of a list separated by space 1 3 10 12 44 2 66
+
+
+Even numbers in the list:  [10, 12, 44, 2, 66]
