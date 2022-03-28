@@ -1,0 +1,25 @@
+# Python program to print Even Numbers in a List using lambda function
+
+i =input('Enter elements of a list separated by space ')
+print("\n")
+list1 = i.split()
+
+for i in range(len(list1)):
+
+  # convert each item to int type
+  list1[i] = int(list1[i])
+
+  # we can also print even no's using lambda exp.
+even_nos = list(filter(lambda x: (x % 2 == 0), list1))
+
+print("Even numbers in the list: ", even_nos)
+
+
+
+
+output:
+
+Enter elements of a list separated by space 1 3 10 12 44 2 66
+
+
+Even numbers in the list:  [10, 12, 44, 2, 66]
