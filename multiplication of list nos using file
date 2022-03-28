@@ -1,0 +1,43 @@
+# Python3 program to multiply all values in the
+# list using lambda function and reduce() and output stored in file
+ 
+from functools import reduce
+i =input('Enter elements of a list separated by space ')
+print("\n")
+list1 = i.split()
+
+
+
+try:
+  for i in range(len(list1)):
+
+    # convert each item to int type
+    list1[i] = int(list1[i])
+
+  result1 = reduce(lambda x, y: x * y , list1)
+
+  with open('multiplication.txt', 'a+') as f:
+      f.write("Multiplication of a numbers is :  ")
+      f.write(str(result1))
+      f.write("\n")
+
+  print(result1)
+
+except TypeError as e:
+  print("This is a type error", e)
+
+except ValueError as e:
+  print("this is value error", e)
+
+except Exception as e:
+  print("All errors handle here", e)
+  
+  
+  
+  
+  output:(which is stored in multiplication.txt file)
+  
+  Enter elements of a list separated by space 1 2 3
+
+
+Multiplication of a list numbers is:  6
