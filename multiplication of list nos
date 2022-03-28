@@ -1,0 +1,25 @@
+# program to multiply all values in the list using lambda function and reduce()
+ 
+from functools import reduce
+i =input('Enter elements of a list separated by space ')
+print("\n")
+list1 = i.split()
+
+for i in range(len(list1)):
+
+  # convert each item to int type
+  list1[i] = int(list1[i])
+
+result1 = reduce(lambda x, y: x * y , list1)
+
+print("Multiplication of a list numbers is: " ,result1)
+
+
+
+
+output:
+
+Enter elements of a list separated by space 1 2 3
+
+
+Multiplication of a list numbers is:  6
